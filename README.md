@@ -13,10 +13,10 @@
         já vem com algumas cartas configuradas mas o usuário pode adicionar novas cartas se assim
         ele preferir.
 
-># 🔗 Para usar siga estes passos:
-- Abra seu terminal e cole: git clone git@github.com:luandersonalvesdev/super-trunfo-game.git
-- Após fazer o clone, entre na pasta do projeto usando: cd super-trunfo-game
-- Agora inicie o projeto com: npm start
+># Para usar siga os passos: ⤵
+1. Abra seu terminal e cole: ```git clone git@github.com:luandersonalvesdev/super-trunfo-game.git```
+2. Entre na pasta do projeto usando: ```cd super-trunfo-game```
+3. Inicie o projeto com: ```npm start```
 
 ## 👨‍💻 APRENDIZADO
 - Criação de formulário usando React.
