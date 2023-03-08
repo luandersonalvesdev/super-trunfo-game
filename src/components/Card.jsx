@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../components/Card.css';
 
 export default class Card extends Component {
   fCheckHasOnDeck = () => {
@@ -30,19 +31,36 @@ export default class Card extends Component {
     } = this.props;
     return (
       <div className="card">
-        <h2 data-testid="name-card">{cardName}</h2>
-        <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-        <h3 data-testid="description-card">{cardDescription}</h3>
-        <p data-testid="attr1-card">{cardAttr1}</p>
-        <p data-testid="attr2-card">{cardAttr2}</p>
-        <p data-testid="attr3-card">{cardAttr3}</p>
-        <p data-testid="rare-card">{cardRare}</p>
-        {
-          cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>
-        }
-        {
-          hasOnDeck && this.fCheckHasOnDeck()
-        }
+        <div className="card-inside">
+          <h2 data-testid="name-card">{cardName}</h2>
+          <div className="container-img">
+            <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+          </div>
+          <h3 className="description-card" data-testid="description-card">{cardDescription}</h3>
+          <div className="container-attr">
+            <div>
+              <span>Ataque</span>
+              <p data-testid="attr1-card">{cardAttr1}</p>
+            </div>
+            <div>
+              <span>Defesa</span>
+              <p data-testid="attr2-card">{cardAttr2}</p>
+            </div>
+            <div>
+              <span>Agilidade</span>
+              <p data-testid="attr3-card">{cardAttr3}</p>
+            </div>
+          </div>
+          <div className="container-final">
+            <span data-testid="rare-card">{cardRare}</span>
+            {
+              cardTrunfo && <span id="super" data-testid="trunfo-card">Super Trunfo</span>
+            }
+            {
+              hasOnDeck && this.fCheckHasOnDeck()
+            }
+          </div>
+        </div>
       </div>
     );
   }

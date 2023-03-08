@@ -1,0 +1,153 @@
+@import './colors.css';
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  font-size: 1.1rem;
+  border-radius: 20px;
+}
+
+form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form label span {
+  font-size: 1.2rem;
+  color: var(--accent-2);
+}
+
+form input, form textarea, form select {
+  background-color: var(--bg-form);
+  font-size: 1rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-family: 'Fjalla one', sans-serif;
+}
+
+form input:focus, form select {
+  outline: 0;
+  border-bottom: 1px solid var(--accent-3);
+}
+
+form .container-intro-new-card label {
+  display: flex;
+  flex-direction: column;
+}
+
+form .container-intro-new-card label span {
+  text-align: start;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--accent-3);
+}
+
+form .container-intro-new-card label input {
+  margin-bottom: 20px;
+}
+
+form .container-intro-new-card label textarea {
+  height: 50px;
+}
+
+form .container-intro-new-card label textarea:focus {
+  outline: 1px solid var(--accent-3);
+  border-bottom: 1px solid var(--accent-3);
+}
+
+form .container-attrs {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+form .container-attrs label {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+form .container-attrs label input {
+  width: 50px;
+  text-align: center;
+}
+
+form .container-attrs label input::-webkit-outer-spin-button,
+form .container-attrs label input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+form .label-img {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .label-img input {
+  border: 1px solid var(--black);
+  background: url('../svg/link-45deg.svg') no-repeat 4px 4px;
+  background-position: right;
+  padding: 2px;
+  padding-right: 20px;
+  width: 150px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+form .container-rare {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
+
+form .container-rare span {
+  font-size: 0.9rem;
+}
+
+form .container-rare select {
+  margin-top: 10px;
+}
+
+form .container-final {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+form .container-final span {
+  font-size: 0.7rem;
+}
+
+form .container-final input {
+  margin-right: 10px;
+}
+
+form .container-final button:disabled {
+  background-color: var(--accent-3);
+  opacity: 0.2;
+}
+
+form .container-final button:disabled:hover {
+  background-color: var(--accent-3);
+  color: var(--black);
+}
+
+form .container-final button {
+  padding: 5px;
+  width: 100px;
+  background-color: var(--accent-1);
+  color: var(--black);
+  border: 1px solid var(--black);
+  box-shadow: -4px 4px 0px 1px var(--accent-4), -4px 4px 0px 2px rgba(0,0,0,1);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  font-family: 'Fjalla one', sans-serif;
+}
+
+form .container-final button:hover {
+  background-color: var(--accent-2);
+  color: var(--white);
+  transition-duration: 0.3s;
+  box-shadow: -2px 2px 0px 1px var(--accent-4), -2px 2px 0px 2px rgba(0,0,0,1);
+}

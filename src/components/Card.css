@@ -1,0 +1,122 @@
+@import './colors.css';
+
+.card {
+  min-width: 300px;
+  max-width: 300px;
+  width: 300px;
+  height: 450px;
+  box-shadow: -4px 4px 0px 1px var(--accent-1), -4px 4px 0px 2px rgba(0,0,0,1);
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+
+.card-inside {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-card);
+  outline: 2px solid var(--black);
+}
+
+.card-inside h2 {
+  text-align: start;
+  padding: 4px 15px;
+  height: 2rem;
+}
+
+.card-inside .container-img {
+  outline: 2px solid var(--black);
+  width: 90%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  align-self: center;
+}
+
+.card-inside .description-card {
+  background-color: var(--white);
+  padding: 4px;
+  width: 87%;
+  height: 50px;
+  word-wrap: break-word;
+  outline: 2px solid var(--black);
+}
+
+
+.card-inside img {
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+}
+
+.card-inside h3 {
+  width: 90%;
+  font-size: 0.8rem;
+  align-self: center;
+  margin: 10px 0;
+}
+
+.card-inside .container-attr {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0px 15px;
+}
+
+.card-inside .container-attr div {
+  width: 100px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: 2px solid var(--black);
+  background-color: var(--white);
+}
+
+.card-inside .container-attr div:nth-child(1) {
+  background-color: var(--attr1-card);
+}
+
+.card-inside .container-attr div:nth-child(2) {
+  background-color: var(--attr2-card);
+}
+
+.card-inside .container-attr div:nth-child(3) {
+  background-color: var(--attr3-card);
+}
+
+.card-inside .container-final {
+  display: flex;
+  margin: 10px 15px;
+  justify-content: space-around;
+}
+
+.card-inside .container-final span {
+  padding: 5px;
+}
+
+.card-inside .container-final #super {
+  background-color: var(--super-trunfo);
+  outline: 1px solid var(--black);
+  color: var(--white);
+}
+
+.card-inside .container-final button {
+  padding: 5px;
+  width: 50px;
+  background-color: var(--accent-1);
+  color: var(--black);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  font-family: 'Fjalla one', sans-serif;
+}
+
+.card-inside .container-final button:hover {
+  background-color: var(--accent-2);
+  color: var(--white);
+  transition-duration: 0.3s;
+}

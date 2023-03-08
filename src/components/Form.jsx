@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Form.css'
 
 export default class Form extends Component {
   renderInputSuperTrunfo = () => {
@@ -31,31 +32,37 @@ export default class Form extends Component {
     } = this.props;
     return (
       <form>
-        <label>
-          Nome da carta:
-          <input
-            data-testid="name-input"
-            type="text"
-            name="cardName"
-            onChange={ onInputChange }
-            value={ cardName }
-          />
-        </label>
+        <h2>Adicione uma nova carta</h2>
+        <div className="container-intro-new-card">
+          <label>
+            <span>Nome da carta</span>
+            <input
+              data-testid="name-input"
+              type="text"
+              name="cardName"
+              onChange={ onInputChange }
+              value={ cardName }
+              maxLength={20}
+            />
+          </label>
 
-        <label>
-          Descrição da carta:
-          <textarea
-            data-testid="description-input"
-            name="cardDescription"
-            cols="30"
-            rows="10"
-            onChange={ onInputChange }
-            value={ cardDescription }
-          />
-        </label>
+          <label>
+            <span>Descrição da carta</span>
+            <textarea
+              data-testid="description-input"
+              name="cardDescription"
+              cols="30"
+              rows="10"
+              onChange={ onInputChange }
+              value={ cardDescription }
+              maxLength={120}
+            />
+          </label>
+        </div>
 
+      <div className="container-attrs">
         <label>
-          Ataque:
+          <span>Ataque</span>
           <input
             data-testid="attr1-input"
             type="number"
@@ -66,7 +73,7 @@ export default class Form extends Component {
         </label>
 
         <label>
-          Defesa:
+          <span>Defesa</span>
           <input
             data-testid="attr2-input"
             type="number"
@@ -77,7 +84,7 @@ export default class Form extends Component {
         </label>
 
         <label>
-          Agilidade:
+          <span>Agilidade</span>
           <input
             data-testid="attr3-input"
             type="number"
@@ -86,9 +93,11 @@ export default class Form extends Component {
             value={ cardAttr3 }
           />
         </label>
+      </div>
+        
 
-        <label>
-          Imagem:
+        <label className="label-img">
+          <span>Imagem</span>
           <input
             data-testid="image-input"
             type="text"
@@ -98,28 +107,28 @@ export default class Form extends Component {
           />
         </label>
 
-        <label>
-          Raridade:
+        <label className="container-rare">
+          <span>Raridade</span>
           <select
             name="cardRare"
             data-testid="rare-input"
             onChange={ onInputChange }
             value={ cardRare }
           >
-            <option value="normal">Normal</option>
-            <option value="raro">Raro</option>
-            <option value="muito raro">Muito raro</option>
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito raro">Muito raro</option>
           </select>
         </label>
 
+      <div className="container-final">
         {
           hasTrunfo
-            ? <p>Você já tem um Super Trunfo em seu baralho</p>
+            ? <span>Você já tem um Super Trunfo</span>
             : (
               <label>
-                Super Trunfo
-                {' '}
                 {this.renderInputSuperTrunfo()}
+                <span>Super Trunfo</span>
               </label>)
         }
 
@@ -130,6 +139,7 @@ export default class Form extends Component {
         >
           Salvar
         </button>
+      </div>
       </form>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import './components/App.css'
+import deck from './data/dataDeck';
 
 const MAX_ATTR = 210;
 const MAX_PER_ATTR = 90;
@@ -9,16 +11,16 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardDescription: '',
-    cardAttr1: '',
-    cardAttr2: '',
-    cardAttr3: '',
-    cardImage: '',
-    cardRare: 'normal',
+    cardAttr1: '0',
+    cardAttr2: '0',
+    cardAttr3: '0',
+    cardImage: 'https://static.vecteezy.com/ti/vetor-gratis/p3/7126739-icone-de-ponto-de-interrogacao-gratis-vetor.jpg',
+    cardRare: 'Normal',
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    allCards: [],
-    filteredAllCards: [],
+    allCards: deck,
+    filteredAllCards: deck,
     filterTrunfo: false,
   };
 
@@ -91,6 +93,8 @@ class App extends React.Component {
       hasOnDeck: true,
     };
 
+    console.log(newCard);
+
     this.setState((prev) => ({
       allCards: [...prev.allCards, newCard],
       cardName: '',
@@ -99,7 +103,7 @@ class App extends React.Component {
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',
-      cardRare: 'normal',
+      cardRare: 'Normal',
       filteredAllCards: [...prev.allCards, newCard],
     }), this.checkHasTrunfo);
   };
@@ -130,7 +134,7 @@ class App extends React.Component {
   fFilterByRare = ({ target: { value } }) => {
     const { allCards } = this.state;
     const filtered = allCards.filter((card) => {
-      if (value === 'todas') {
+      if (value === 'Todas') {
         return true;
       }
       if (card.cardRare === value) {
@@ -166,8 +170,8 @@ class App extends React.Component {
 
     return (
       <>
-        <div>
-          <h1>Tryunfo</h1>
+      <h1>Super Trunfo de personagens</h1>
+        <div className='container-app'>
           <Form
             cardName={ cardName }
             cardDescription={ cardDescription }
@@ -195,33 +199,37 @@ class App extends React.Component {
           />
         </div>
 
-        <input
-          type="text"
-          data-testid="name-filter"
-          onChange={ this.fFilterByName }
-          disabled={ filterTrunfo }
-        />
-
-        <select
-          name=""
-          data-testid="rare-filter"
-          onChange={ this.fFilterByRare }
-          disabled={ filterTrunfo }
-        >
-          <option value="todas">todas</option>
-          <option value="normal">normal</option>
-          <option value="raro">raro</option>
-          <option value="muito raro">muito raro</option>
-        </select>
-
-        <label>
-          Super Trunfo
+        <div className="container-filter">
+          <span>Filtros</span>
           <input
-            type="checkbox"
-            data-testid="trunfo-filter"
-            onChange={ this.fFilterBySuperTrunfo }
+            type="text"
+            data-testid="name-filter"
+            onChange={ this.fFilterByName }
+            disabled={ filterTrunfo }
+            placeholder="Nome da carta"
+            maxLength={20}
           />
-        </label>
+
+          <select
+            data-testid="rare-filter"
+            onChange={ this.fFilterByRare }
+            disabled={ filterTrunfo }
+          >
+            <option value="Todas">Todas</option>
+            <option value="Normal">Normal</option>
+            <option value="Raro">Raro</option>
+            <option value="Muito raro">Muito raro</option>
+          </select>
+
+          <label>
+            Super Trunfo
+            <input
+              type="checkbox"
+              data-testid="trunfo-filter"
+              onChange={ this.fFilterBySuperTrunfo }
+            />
+          </label>
+        </div>
 
         <div className="container-card">
           {
